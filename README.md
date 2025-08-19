@@ -1,5 +1,23 @@
 # RedTest.ai - AI Health Platform
 
+## Deployment Note
+
+If you see `sh: 1: tsc: Permission denied` during Docker builds, ensure your image does not copy local `node_modules` into `/app`. Add a `.dockerignore` at repository root to exclude them:
+
+```
+node_modules
+.git
+dist
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+**/*.log
+```
+
+Then rebuild/deploy.
+
 A modern landing page and registration system for RedTest.ai, built with React, TypeScript, and Tailwind CSS.
 
 ## Features
